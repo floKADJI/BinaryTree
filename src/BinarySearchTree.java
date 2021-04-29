@@ -8,14 +8,19 @@ public class BinarySearchTree {
         BinaryTree myTree = new BinaryTree(9);
         myTree.getRoot().addLeftNode(7);
         myTree.getRoot().addRightNode(13);
-        myTree.getRoot().getRight().addRightNode(15);
-        myTree.getRoot().getRight().addLeftNode(11);
+        myTree.getRoot().getLeft().addRightNode(6);
+        myTree.getRoot().getLeft().addLeftNode(2);
         //myTree.getRoot().getRight().getLeft().addLeftNode(1);
         //myTree.getRoot().getRight().getLeft().addRightNode(1);
 
         //System.out.println("Le nombre de sous arbres unival est de " + myTree.getRoot().countUnivalSubTree());
         System.out.println("Saisir le nombre a cherche: ");
         int checkValue = sc.nextInt();
-        System.out.println("le numbre est dans l'arbre: " + myTree.getRoot().search(checkValue));
+
+        try {
+            System.out.printf("le nombre %d est dans l'arbre.", myTree.getRoot().find(checkValue).getValue());
+        } catch (NullPointerException nullPointerException){
+            System.out.println("null");
+        }
     }
 }

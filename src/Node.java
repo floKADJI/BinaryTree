@@ -81,4 +81,25 @@ public class Node {
         }
         return false;
     }
+
+    public Node find(int value){
+        if (value == this.value){
+            return this;
+        }
+        if (value < this.value){
+            if (left == null){
+                return null;
+            } else {
+                return left.find(value);
+            }
+        }
+        if (value > this.value){
+            if (right == null){
+                return null;
+            } else {
+                return right.find(value);
+            }
+        }
+        return null;
+    }
 }
